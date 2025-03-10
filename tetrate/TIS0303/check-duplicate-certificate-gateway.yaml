@@ -1,7 +1,7 @@
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
-  name: enforce-unique-gateway-tls
+  name: check-duplicate-certificate-gateway
   annotations:
     policies.kyverno.io/title: Enforce Unique Gateway TLS Credentials
     policies.kyverno.io/category: Istio Best Practices
@@ -13,7 +13,7 @@ metadata:
 spec:
   validationFailureAction: Enforce
   rules:
-    - name: enforce-unique-gateway-tls
+    - name: check-duplicate-certificate-gateway
       match:
         any:
           - resources:
